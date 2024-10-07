@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="light">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Peddy</title>
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css"
+    />
+    <link
+      href="https://cdn.jsdelivr.net/npm/daisyui@4.12.11/dist/full.min.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header>
+      <!-- <nav class="w-11/12 mx-auto flex justify-between px-2 py-5 items-center ">
+            <div class="flex items-center gap-3">
+                <img class="h-6" src="images/logo.webp" alt="">
+                <h1 class="font-extrabold text-3xl">Peddy</h1>
+            </div>
+            <div class="hidden lg:block">
+                <ul class="flex text-[rgb(19,19,19)] gap-6">
+                    <li>Home</li>
+                    <li>Shop</li>
+                    <li>Contact</li>
+                </ul>
+            </div>
+            <div>
+                <img src="https://img.icons8.com/?size=32&id=22396&format=png" alt="">
+            </div>
+        </nav> -->
+
+      <nav class="w-11/12 mx-auto">
+        <div class="navbar bg-base-100">
+          <div class="navbar-start">
+            <div class="dropdown">
+              <div tabindex="0" role="button" class="btn btn-ghost lg:hidden">
+                <svg
+                  xmlns="http://www.w3.org/2000/svg"
+                  class="h-5 w-5"
+                  fill="none"
+                  viewBox="0 0 24 24"
+                  stroke="currentColor"
+                >
+                  <path
+                    stroke-linecap="round"
+                    stroke-linejoin="round"
+                    stroke-width="2"
+                    d="M4 6h16M4 12h8m-8 6h16"
+                  />
+                </svg>
+              </div>
+              <ul
+                tabindex="0"
+                class="menu text-[rgb(19,19,19)] menu-sm dropdown-content bg-base-100 rounded-box z-[1] mt-3 w-52 p-2 shadow"
+              >
+                <li><a>Home</a></li>
+                <li><a>Shop</a></li>
+
+                <li><a>Contact</a></li>
+              </ul>
+            </div>
+            <div class="flex items-center gap-3">
+              <img class="h-6" src="images/logo.webp" alt="" />
+              <h1 class="font-extrabold text-3xl">Peddy</h1>
+            </div>
+          </div>
+          <div class="navbar-center hidden lg:flex">
+            <ul class="menu menu-horizontal px-1">
+              <li><a>Home</a></li>
+              <li><a>Shop</a></li>
+
+              <li><a>Contact</a></li>
+            </ul>
+          </div>
+          <div class="navbar-end">
+            <img
+              src="https://img.icons8.com/?size=32&id=22396&format=png"
+              alt=""
+            />
+          </div>
+        </div>
+      </nav>
+
+      <!-- hero section---- -->
+      <section
+        class="w-11/12 mt-20 mx-auto flex flex-col items-center justify-center min-h-screen bg-white"
+      >
+        <div class="text-center space-y-6 w-full">
+          <h1 class="text-gray-600 text-xl font-medium">
+            Bringing Families Together <span class="ml-2">🔥</span>
+          </h1>
+          <h2 class="text-4xl  lg:text-6xl font-bold mt-2 max-w-[740px] mx-auto">
+            Your Path to Adoption Starts Here
+          </h2>
+          <p class="text-gray-500 mt-4 max-w-4xl mx-auto">
+            Pet adoption is a beautiful way to give animals a second chance at
+            life, providing them with loving homes. It not only transforms the
+            lives of pets but also brings joy, companionship, and purpose to the
+            families who adopt them.
+          </p>
+          <button onclick="scrollToBestDealSection()"
+            class="mt-6 px-6 py-3 bg-emerald-500 text-white text-lg rounded-lg hover:bg-emerald-600"
+          >
+            View More
+          </button>
+        </div>
+
+        <div class="mt-10 w-full">
+          <img
+            class="mx-auto lg:w-[802px]"
+            src="images/pet.webp"
+            alt="Dog and Cat"
+            class="w-full max-w-lg mx-auto"
+          />
+        </div>
+      </section>
+    </header>
+
+    <main class="w-11/12 mx-auto">
+      <!-- #adopt your best friend -->
+      <section id="adopt">
+        <div class="text-center space-y-6 w-full mb-12">
+          <h2 class=" text-4xl lg:text-6xl font-bold mt-2 max-w-[740px] mx-auto">
+            Adopt Your Best Friend
+          </h2>
+          <p class="text-gray-500 mt-4 max-w-4xl mx-auto">
+            Adopting a pet fills your life with joy while offering a loving home
+            to an animal in need. It’s a beautiful way to find a loyal companion
+            and make a difference.
+          </p>
+        </div>
+
+        <!-- -----category fetch section---  -->
+        <div
+          id="category"
+          class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5 px-2"
+        ></div>
+      </section>
+
+      <!-- --------best deal section ----  -->
+
+      <section class="mt-12 mb-12">
+        <div class="flex flex-col lg:flex-row justify-between items-center">
+          <h2 class="text-2xl font-bold">Best Deal For you</h2>
+          <button
+            id="sortPriceBtn"
+            class="mt-6 px-6 py-2 bg-emerald-500 text-white text-lg rounded-lg hover:bg-emerald-600"
+          >
+            Sort by Price
+          </button>
+        </div>
+
+        <!-- ----show items-------  -->
+        <div class="flex flex-col lg:flex-row  gap-5 mt-12">
+          <!-- show images  -->
+          <div
+            id="bestDeal"
+            class="lg:w-9/12 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 px-2 py-4 border"
+          >
+            <!-- Loading icon in the category section -->
+           
+          </div>
+          <!-- --add images to cart--- -->
+          <div class="lg:w-3/12">
+            <h1 class="text-2xl text-center font-bold">Add to Cart</h1>
+            <div
+              id="bestDealCart"
+              class="border min-h-64 grid grid-cols-2 gap-2 px-3 py-4"
+            ></div>
+          </div>
+        </div>
+
+        <!-- modal----------  -->
+
+        <dialog id="my_modal_4" class="modal">
+          <div class="modal-box w-11/12 border border-red-500 max-w-xl">
+            <div class="bg-white shadow-lg rounded-lg">
+              <!-- Image Section -->
+              <img
+                id="modal-image"
+                class="rounded-t-lg w-full"
+                src=""
+                alt="Pet image"
+              />
+
+              <!-- Content Section -->
+              <div class="p-6">
+                <h2 id="modal-pet-name" class="text-2xl font-bold mb-4">
+                  Alessia Max
+                </h2>
+
+                <!-- Info Section -->
+                <div class="flex flex-wrap text-gray-700 text-sm mb-4">
+                  <div class="w-1/2 flex items-center mb-2">
+                    <i class="fas fa-paw mr-2"></i>
+                    <span id="modal-breed">Breed: Golden Retriever</span>
+                  </div>
+                  <div class="w-1/2 flex items-center mb-2">
+                    <i class="fas fa-calendar-alt mr-2"></i>
+                    <span id="modal-birth">Birth: 2024</span>
+                  </div>
+                  <div class="w-1/2 flex items-center mb-2">
+                    <i class="fas fa-venus mr-2"></i>
+                    <span id="modal-gender">Gender: Female</span>
+                  </div>
+                  <div class="w-1/2 flex items-center mb-2">
+                    <i class="fas fa-dollar-sign mr-2"></i>
+                    <span id="modal-price">Price: $199</span>
+                  </div>
+                </div>
+
+                <!-- Details Section -->
+                <div class="text-gray-600 text-sm border-t pt-2">
+                  <h3 class="font-bold mb-2">Details Information</h3>
+                  <p>
+                    It is a long established fact that a reader will be
+                    distracted by the readable content of a page when looking at
+                    its layout.
+                  </p>
+                </div>
+              </div>
+
+              <!-- Cancel Button -->
+              <div class="modal-action">
+                <button
+                  class="w-full bg-teal-200 hover:bg-teal-100 text-green-600 py-2 font-bold rounded"
+                  onclick="closeModal()"
+                >
+                  Cancel
+                </button>
+              </div>
+            </div>
+          </div>
+        </dialog>
+
+        <dialog id="my_modal_2" class="modal">
+          <div id="modal" class="modal-box w-11/12 border border-red-500 max-w-xl">
+            <div class="bg-white p-6 rounded-lg text-center">
+              <img src="https://image.shutterstock.com/image-vector/handshake-icon-deal-symbol-line-260nw-749516455.jpg" alt="Congrats Icon" class="mx-auto w-12 h-12 mb-4">
+              <h2 class="text-3xl text-black font-bold">Congrates</h2>
+              <p class="text-gray-600">Adoption Process is Start For your Pet</p>
+              <p id="countdown" class="text-3xl font-bold mt-2">3</p>
+          </div>
+          </div>
+        </dialog>
+      </section>
+    </main>
+
+    <footer class="w-full lg:px-20 bg-[rgb(19,19,19)]">
+      <div class="md:container mx-auto">
+          <div class=" lg:flex lg:justify-between   text-base-content py-16 px-10 text-white">
+              <nav class="flex mb-8 lg:mb-0 flex-col space-y-3">
+                <a class="btn btn-ghost justify-start mb-2 text-xl text-[rgba(255,255,255,0.9)] p-0"><img class="w-fit" src="images/logo.webp" alt="">Peddy</a>
+                <a class="link link-hover">Location: av. Washington 165, NY CA 54003</a>
+                <a class="link link-hover">Phone: +31 85 964 47 25</a>
+                <a class="link link-hover">Email: info@yourdomain.com</a>
+                <a class="link link-hover">Openings hours: 9.00 AM - 5.00 PM</a>
+                <div class="flex items-center space-x-2">
+                  <img class="w-10" src="https://img.icons8.com/?size=48&id=uLWV5A9vXIPu&format=png" alt="">
+                  <img class="w-10" src="https://img.icons8.com/?size=48&id=cMRBi0rI3iwb&format=png" alt="">
+                  <img class="w-10" src="https://img.icons8.com/?size=48&id=19318&format=png" alt="">
+                  <img class="w-10" src="https://img.icons8.com/?size=48&id=32323&format=png" alt="">
+                </div>
+              </nav>
+              <nav class="flex flex-col mb-7 lg:mb-0 space-y-2">
+                <h6 class=" lg:mb-3 text-xl text-[rgba(255,255,255,0.9)] font-bold">Useful Links</h6>
+                <a class="link link-hover">Home</a>
+                <a class="link link-hover">About Us</a>
+                <a class="link link-hover">Animals</a>
+                <a class="link link-hover">Foundation</a>
+                <a class="link link-hover">Contact</a>
+              </nav>
+              <form>
+                <h6 class="mb-2 lg:mb-6 text-xl text-[rgba(255,255,255,0.9)] font-bold">Drop a Message</h6>
+                <fieldset class="form-control w-80">
+                  
+                  <div class="flex flex-col space-y-4">
+                    <input
+                      type="text"
+                      placeholder="Enter your email"
+                      class="input  bg-[rgba(255,255,255,0.05)] join-item" />
+                    <button class="btn bg-[rgb(14,122,129)] border-none text-white text-xl join-item">Subscribe</button>
+                  </div>
+                </fieldset>
+              </form>
+          </div>
+
+      </div>
+   
+  </footer>
+
+    <script src="js/pet.js"></script>
+  </body>
+</html>
